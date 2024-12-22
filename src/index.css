@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* animasi elemen */
+/* Definisikan animasi dengan @keyframes */
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0); /* Posisi awal */
+  }
+  50% {
+    transform: translateY(-10px); /* Gerak ke atas */
+  }
+  100% {
+    transform: translateY(0); /* Kembali ke posisi awal */
+  }
+}
+
+/* scroll */
+/* Gaya scrollbar vertikal */
+::-webkit-scrollbar {
+  width: 0; /* lebar scrollbar */
+}
+
+
+/* Terapkan animasi ke elemen */
+.ngambang1 {
+  position: relative;
+  animation: moveUpDown 3s infinite; /* 2 detik, infinite untuk terus menerus */
+}
+.ngambang2 {
+  position: relative;
+  animation: moveUpDown 4s infinite; /* 2 detik, infinite untuk terus menerus */
+}
+.ngambang3 {
+  position: relative;
+  animation: moveUpDown 3.5s infinite; /* 2 detik, infinite untuk terus menerus */
+}
+
+/* Membuat animasi rotasi */
+@keyframes putar {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* Styling untuk elemen yang akan berputar */
+.putar {
+  animation: putar 7s linear infinite;
+}

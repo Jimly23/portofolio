@@ -1,0 +1,79 @@
+[
+  {
+    "kode": "p1",
+    "nama": "Minyak",
+    "hBeli": 16000,
+    "hJual": 18000,
+    "keuntungan": 5,
+    "suplier": "Ahmad",
+    "tBeli": "02-10-2024",
+    "tJual": "04-10-2024",
+    "stok": 45
+  },
+  {
+    "kode": "p2",
+    "nama": "Garam",
+    "hBeli": 5000,
+    "hJual": 6000,
+    "keuntungan": 5,
+    "suplier": "Ahmad",
+    "tBeli": "02-10-2024",
+    "tJual": "04-10-2024",
+    "stok": 33
+  },
+  {
+    "kode": "p3",
+    "nama": "Gula",
+    "hBeli": 7000,
+    "hJual": 8500,
+    "keuntungan": 8,
+    "suplier": "Budi",
+    "tBeli": "01-10-2024",
+    "tJual": "03-10-2024",
+    "stok": 50
+  },
+  {
+    "kode": "p4",
+    "nama": "Beras",
+    "hBeli": 12000,
+    "hJual": 14000,
+    "keuntungan": 10,
+    "suplier": "Citra",
+    "tBeli": "28-09-2024",
+    "tJual": "05-10-2024",
+    "stok": 100
+  },
+  {
+    "kode": "p5",
+    "nama": "Minyak Goreng",
+    "hBeli": 15000,
+    "hJual": 17000,
+    "keuntungan": 7,
+    "suplier": "Dewi",
+    "tBeli": "30-09-2024",
+    "tJual": "07-10-2024",
+    "stok": 25
+  },
+  {
+    "kode": "p6",
+    "nama": "Kopi",
+    "hBeli": 8000,
+    "hJual": 9500,
+    "keuntungan": 9,
+    "suplier": "Eko",
+    "tBeli": "29-09-2024",
+    "tJual": "02-10-2024",
+    "stok": 75
+  },
+  {
+    "kode": "p7",
+    "nama": "Teh",
+    "hBeli": 4000,
+    "hJual": 5500,
+    "keuntungan": 10,
+    "suplier": "Fajar",
+    "tBeli": "01-10-2024",
+    "tJual": "06-10-2024",
+    "stok": 60
+  }
+]
