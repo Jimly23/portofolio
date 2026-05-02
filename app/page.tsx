@@ -64,13 +64,13 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <main className="max-w-[1200px] mx-auto px-8 pt-32 md:pt-56 pb-20">
+      <main className="max-w-[1200px] mx-auto px-8 pt-36 md:pt-36 pb-20">
         <h1 className="text-[40px] md:text-[52px] lg:text-[56px] leading-[1.1] font-semibold tracking-[-0.02em] text-white mb-8">
           Jimly Assidqi As a Fullstack Web Developer, I have a passion for creating engaging and user-friendly web applications.
         </h1>
 
         <p className="font-mono text-[19px] md:text-[21px] text-zinc-400 leading-[1.6] mb-14 max-w-[760px]">
-          <span className="text-zinc-100 font-medium">Fullstack Web Developer</span> with a passion for building engaging applications using <span className="text-zinc-100 font-medium">Next.js and Express</span> Currently a <span className="text-zinc-100 font-medium">6th-semester student</span> at Amikom Purwokerto. Previously won<span className="text-zinc-100 font-medium">1st Place</span>, in multiple national web development and programming competitions. <span className="text-zinc-100 font-medium"></span>
+          <span className="text-zinc-100 font-medium">Fullstack Web Developer</span> with a passion for building engaging applications using <span className="text-zinc-100 font-medium">Next.js and Express</span> Currently a <span className="text-zinc-100 font-medium">6th-semester student</span> at Amikom Purwokerto. Previously won<span className="text-zinc-100 font-medium"> 1st Place</span>, in multiple national web development and programming competitions. <span className="text-zinc-100 font-medium"></span>
         </p>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 sm:gap-6">
