@@ -163,43 +163,43 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Project 1 */}
-          <a href="https://elobright.com" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
+          <a href="https://sig.jimlyassidqi.my.id/" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
             <div className="h-56 w-full bg-zinc-800 relative">
-              <img src="/assets/elobright.png" alt="Elobright" className="w-full h-full object-cover" />
+              <img src="/assets/sig-rumah-sakit.png" alt="SIG Rumah Sakit" className="w-full h-full object-cover" />
             </div>
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">Elobright</h3>
+              <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">SIG Rumah Sakit</h3>
               <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS, Express</p>
               <p className="text-zinc-400 text-[14px] leading-[1.6]">
-                Website komprehensif untuk memfasilitasi tes bahasa Inggris seperti TOEFL dan IELTS. Platform ini dirancang untuk memberikan pengalaman ujian yang lancar dan interaktif bagi para penggunanya.
+                Website Sistem Informasi Geografis (SIG) interaktif yang dirancang untuk mempermudah pencarian profil, fasilitas, dan lokasi rumah sakit untuk masyarakat.
               </p>
             </div>
           </a>
 
           {/* Project 2 */}
-          <a href="https://invictus-gc.com" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
+          <a href="https://pariwisata.jimlyassidqi.my.id/" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
             <div className="h-56 w-full bg-zinc-800 relative">
-              <img src="/assets/invictus.png" alt="Invictus Global Consultancy" className="w-full h-full object-cover" />
+              <img src="/assets/sig-pariwisata.png" alt="SIG Pariwisata" className="w-full h-full object-cover" />
             </div>
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">Invictus Global Consultancy</h3>
-              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS</p>
+              <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">SIG Pariwisata</h3>
+              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">CodeIgniter, TailwindCSS, Leaflet</p>
               <p className="text-zinc-400 text-[14px] leading-[1.6]">
-                Sebuah perusahaan konsultan strategis global yang berfokus pada transformasi digital, AI, dan pengembangan kapabilitas organisasi. Invictus tidak hanya memberikan saran (advisory), tetapi juga terlibat langsung dalam eksekusi dan implementasi transformasi melalui dua pendekatan utamanya: Executive Partnership (strategi) dan Fractional Leadership (eksekusi).
+                Platform interaktif pariwisata berbasis peta untuk mengeksplorasi destinasi wisata. Dilengkapi fitur pencarian atraksi, fasilitas, dan harga tiket secara dinamis.
               </p>
             </div>
           </a>
 
           {/* Project 3 */}
-          <a href="https://sig.jimlyassidqi.my.id" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
+          <a href="https://ecommerce.youvitation.net/" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
             <div className="h-56 w-full bg-zinc-800 relative">
-              <img src="/assets/sig.png" alt="SIG Brebes Selatan" className="w-full h-full object-cover" />
+              <img src="/assets/ecommerce.png" alt="Roseline" className="w-full h-full object-cover" />
             </div>
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">SIG Brebes Selatan</h3>
-              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS, Express</p>
+              <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">Roseline</h3>
+              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS</p>
               <p className="text-zinc-400 text-[14px] leading-[1.6]">
-                Website Sistem Informasi Geografis (SIG) yang dirancang khusus untuk mempermudah pencarian profil dan lokasi sekolah-sekolah SMK yang berada di wilayah Brebes Selatan.
+                Website platform e-commerce modern premium dengan pengalaman belanja online responsif dan mendukung fitur keranjang serta checkout yang mudah digunakan.
               </p>
             </div>
           </a>
@@ -207,6 +207,48 @@ export default function Home() {
           {showMoreProjects && (
             <>
               {/* Project 4 */}
+              <a href="https://elobright.com" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
+                <div className="h-56 w-full bg-zinc-800 relative">
+                  <img src="/assets/elobright.png" alt="Elobright" className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">Elobright</h3>
+                  <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS, Express</p>
+                  <p className="text-zinc-400 text-[14px] leading-[1.6]">
+                    Website komprehensif untuk memfasilitasi tes bahasa Inggris seperti TOEFL dan IELTS. Platform ini dirancang untuk memberikan pengalaman ujian yang lancar dan interaktif bagi para penggunanya.
+                  </p>
+                </div>
+              </a>
+
+              {/* Project 5 */}
+              <a href="https://invictus-gc.com" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
+                <div className="h-56 w-full bg-zinc-800 relative">
+                  <img src="/assets/invictus.png" alt="Invictus Global Consultancy" className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">Invictus Global Consultancy</h3>
+                  <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS</p>
+                  <p className="text-zinc-400 text-[14px] leading-[1.6]">
+                    Sebuah perusahaan konsultan strategis global yang berfokus pada transformasi digital, AI, dan pengembangan kapabilitas organisasi. Invictus tidak hanya memberikan saran (advisory), tetapi juga terlibat langsung dalam eksekusi dan implementasi transformasi melalui dua pendekatan utamanya: Executive Partnership (strategi) dan Fractional Leadership (eksekusi).
+                  </p>
+                </div>
+              </a>
+
+              {/* Project 6 */}
+              <a href="https://sig.jimlyassidqi.my.id" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
+                <div className="h-56 w-full bg-zinc-800 relative">
+                  <img src="/assets/sig.png" alt="SIG Brebes Selatan" className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">SIG Brebes Selatan</h3>
+                  <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS, Express</p>
+                  <p className="text-zinc-400 text-[14px] leading-[1.6]">
+                    Website Sistem Informasi Geografis (SIG) yang dirancang khusus untuk mempermudah pencarian profil dan lokasi sekolah-sekolah SMK yang berada di wilayah Brebes Selatan.
+                  </p>
+                </div>
+              </a>
+
+              {/* Project 7 */}
               <a href="https://easium.lovable.app" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
                 <div className="h-56 w-full bg-zinc-800 relative">
                   <img src="/assets/easium.png" alt="Easium" className="w-full h-full object-cover" />
@@ -220,7 +262,7 @@ export default function Home() {
                 </div>
               </a>
 
-              {/* Project 5 */}
+              {/* Project 8 */}
               <a href="https://know-your-sight.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
                 <div className="h-56 w-full bg-zinc-800 relative">
                   <img src="/assets/kys.png" alt="Know Your Sight" className="w-full h-full object-cover" />
@@ -234,7 +276,7 @@ export default function Home() {
                 </div>
               </a>
 
-              {/* Project 6 */}
+              {/* Project 9 */}
               <a href="https://z-store.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
                 <div className="h-56 w-full bg-zinc-800 relative">
                   <img src="/assets/topup.png" alt="Topup Game" className="w-full h-full object-cover" />
