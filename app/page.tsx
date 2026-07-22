@@ -169,7 +169,7 @@ export default function Home() {
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">SIG Rumah Sakit</h3>
-              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS, Express</p>
+              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Vue.js, TailwindCSS, Express</p>
               <p className="text-zinc-400 text-[14px] leading-[1.6]">
                 Website Sistem Informasi Geografis (SIG) interaktif yang dirancang untuk mempermudah pencarian profil, fasilitas, dan lokasi rumah sakit untuk masyarakat.
               </p>
@@ -197,7 +197,7 @@ export default function Home() {
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">Roseline</h3>
-              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS</p>
+              <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Vue.js, TailwindCSS</p>
               <p className="text-zinc-400 text-[14px] leading-[1.6]">
                 Website platform e-commerce modern premium dengan pengalaman belanja online responsif dan mendukung fitur keranjang serta checkout yang mudah digunakan.
               </p>
@@ -241,7 +241,7 @@ export default function Home() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">SIG Brebes Selatan</h3>
-                  <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Next.js, TailwindCSS, Express</p>
+                  <p className="text-[#60A5FA] text-[13px] font-medium mb-4">Vue.js, TailwindCSS, Express</p>
                   <p className="text-zinc-400 text-[14px] leading-[1.6]">
                     Website Sistem Informasi Geografis (SIG) yang dirancang khusus untuk mempermudah pencarian profil dan lokasi sekolah-sekolah SMK yang berada di wilayah Brebes Selatan.
                   </p>
@@ -294,19 +294,19 @@ export default function Home() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <button 
+          <button
             onClick={() => setShowMoreProjects(!showMoreProjects)}
             className="px-8 py-3 rounded-full border border-zinc-700 text-white font-medium text-[15px] hover:bg-zinc-800 transition-colors flex items-center gap-2"
           >
             {showMoreProjects ? "Show Less" : "Show More"}
-            <svg 
-              width="16" 
-              height="16" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
               strokeLinejoin="round"
               className={`transition-transform duration-300 ${showMoreProjects ? "rotate-180" : ""}`}
             >
