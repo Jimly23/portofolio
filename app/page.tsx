@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const baseRow1 = [
@@ -122,84 +121,199 @@ const projectsData = [
   }
 ];
 
+const projectShowcaseColors = [
+  "#ffd83d",
+  "#a9dfcf",
+  "#f4abc0",
+  "#aeb7f3",
+  "#f4bd6c",
+  "#c8df79",
+  "#cdb9ed",
+  "#8ed8e2",
+  "#f3a16b",
+  "#d9ed8c",
+  "#efb6d6",
+  "#9fc6f3",
+  "#d8b4f2",
+  "#a6dfc0",
+];
+
 export default function Home() {
   const [showMoreProjects, setShowMoreProjects] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-zinc-800 font-sans">
-      {/* Navbar Container */}
-      <div className="w-full flex justify-center pt-6 px-4 fixed top-0 z-50">
-        {/* Floating Pill Navbar (Dark Theme) */}
-        <nav className="flex items-center justify-between pl-5 pr-2 py-2 max-w-[1200px] w-full bg-zinc-900/80 backdrop-blur-md rounded-full border border-zinc-800 shadow-sm">
-
-          {/* Left: Logo & Title */}
-          <div className="flex items-center gap-3">
-            <div className="text-[#DE5C3B] flex-shrink-0">
-              {/* Abstract Phoenix/Bird Logo SVG */}
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2.5C12 2.5 13.5 6 17 8C20.5 10 23 9.5 23 9.5C23 9.5 19.5 12 16.5 14C13.5 16 11 21.5 11 21.5C11 21.5 11.5 17 9 14.5C6.5 12 1.5 11.5 1.5 11.5C1.5 11.5 5 11 8 9C11 7 12 2.5 12 2.5Z" />
-              </svg>
-            </div>
-            <span className="font-bold text-[18px] tracking-tight text-white">Jimly</span>
-          </div>
-
-          {/* Middle: Links */}
-          <div className="hidden md:flex items-center gap-8 text-[14.5px] font-medium text-zinc-400 mr-auto ml-12">
-            <Link href="#services" className="hover:text-white transition-colors">Services</Link>
-            <Link href="#projects" className="hover:text-white transition-colors">Projects</Link>
-            <Link href="#testimonials" className="hover:text-white transition-colors">Testimonials</Link>
-            <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
-          </div>
-
-          {/* Right: Buttons */}
-          <div className="flex items-center gap-2">
-            {/* <Link href="#" className="px-5 py-2.5 rounded-full border border-zinc-700 text-zinc-300 font-semibold text-[13.5px] hover:bg-zinc-800 hover:text-white transition-colors">
-              Join as supplier
-            </Link> */}
-            <Link href="mailto:jimlyasidqi23@gmail.com" className="px-7 py-2.5 rounded-full bg-white text-black font-semibold text-[13.5px] hover:bg-zinc-200 transition-colors">
-              Work with me
+    <div className="theme-light min-h-screen bg-white text-[#17130f] selection:bg-zinc-200 selection:text-zinc-900 font-sans">
+      {/* Reference-style top navigation */}
+      <div className="fixed inset-x-0 top-0 z-50 px-1 pt-1 sm:px-2">
+        <nav className="mx-auto flex h-9 w-full items-center justify-between border border-[#d7cdb5] bg-[#fff8e6]/95 px-2 text-[9px] font-bold uppercase tracking-[0.12em] text-[#17130f] shadow-[0_1px_0_rgba(75,52,24,0.08)] backdrop-blur-sm sm:px-3">
+          <div className="flex h-full items-center gap-2 sm:gap-4">
+            <Link href="#hero" className="flex h-full items-center gap-2 bg-[#f5d43f] px-2.5 transition-colors hover:bg-[#f1c72c] sm:px-3">
+              <span className="text-[10px]">★</span>
+              <span>Home</span>
+            </Link>
+            <Link href="#about" className="hidden items-center gap-1.5 transition-colors hover:text-[#e07b43] sm:flex">
+              <span>♟</span> About
+            </Link>
+            <Link href="#projects-showcase" className="hidden items-center gap-1.5 transition-colors hover:text-[#e07b43] sm:flex">
+              <span>▦</span> Case Study
+            </Link>
+            <Link href="#testimonials" className="hidden items-center gap-1.5 transition-colors hover:text-[#e07b43] sm:flex">
+              <span>◆</span> Playground
             </Link>
           </div>
 
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <a href="https://www.linkedin.com/in/jimlyassidqihardiansyah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-5 w-5 place-items-center rounded-full bg-[#f2d13a] text-[8px] lowercase transition-transform hover:scale-110">in</a>
+            <a href="#projects-showcase" aria-label="Projects" className="grid h-5 w-5 place-items-center rounded-full bg-[#f39b70] text-[10px] transition-transform hover:scale-110">●</a>
+            <a href="#services" aria-label="Services" className="grid h-5 w-5 place-items-center rounded-full bg-[#46b9a1] text-[9px] transition-transform hover:scale-110">✦</a>
+            <Link href="mailto:jimlyasidqi23@gmail.com" className="ml-1 flex items-center gap-1 border border-[#272018] bg-[#fffdf4] px-2.5 py-1.5 transition-colors hover:bg-[#272018] hover:text-[#fff8e6] sm:ml-2 sm:px-3">
+              <span>♥</span> Contact
+            </Link>
+          </div>
         </nav>
       </div>
 
       {/* Hero Section */}
-      <main className="max-w-[1200px] mx-auto px-8 pt-36 md:pt-36 pb-20">
-        <h1 className="text-[40px] md:text-[52px] lg:text-[56px] leading-[1.1] font-semibold tracking-[-0.02em] text-white mb-8">
-          Jimly Assidqi As a Fullstack Web Developer, I have a passion for creating engaging and user-friendly web applications.
-        </h1>
+      <main id="hero" className="hero-paper relative isolate min-h-[650px] overflow-hidden border-x border-[#ded4bd] px-5 pb-14 pt-20 text-[#17130f] sm:px-8 md:min-h-[700px] md:pt-24">
+        <div className="mx-auto flex min-h-[550px] max-w-[1150px] flex-col items-center">
+          <p className="hero-script mt-2 text-center text-[11px] font-semibold tracking-[0.12em] sm:text-[13px]">my name is</p>
+          <div className="hero-rule mt-1 h-2 w-14" aria-hidden="true" />
 
-        <p className="font-mono text-[19px] md:text-[21px] text-zinc-400 leading-[1.6] mb-14 max-w-[760px]">
-          <span className="text-zinc-100 font-medium">Fullstack Web Developer</span> with a passion for building engaging applications using <span className="text-zinc-100 font-medium">Next.js and Express</span> Currently a <span className="text-zinc-100 font-medium">6th-semester student</span> at Amikom Purwokerto. Previously won<span className="text-zinc-100 font-medium"> 1st Place</span>, in multiple national web development and programming competitions. <span className="text-zinc-100 font-medium"></span>
-        </p>
+          <div className="relative mt-1 flex w-full max-w-[980px] justify-center">
+            <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[220px] md:block" aria-hidden="true">
+              <span className="absolute left-[5%] top-1 rounded-md bg-[#b9e1c6] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.08em] shadow-[2px_2px_0_rgba(23,19,15,0.1)]">Made things</span>
+              <span className="absolute right-[5%] top-1 rounded-md bg-[#f4e58e] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.08em] shadow-[2px_2px_0_rgba(23,19,15,0.1)]">Sweat the details</span>
+              <span className="absolute bottom-8 left-[4%] bg-[#f3d335] px-2.5 py-1.5 font-mono text-[9px] font-bold -rotate-2 shadow-[2px_2px_0_rgba(23,19,15,0.12)]">Product Designer</span>
+              <span className="absolute bottom-8 right-[7%] bg-[#b9e1c6] px-2.5 py-1.5 font-mono text-[9px] font-bold rotate-2 shadow-[2px_2px_0_rgba(23,19,15,0.12)]">Purwokerto, ID</span>
+              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 980 220" fill="none" preserveAspectRatio="none">
+                <path d="M182 20 C245 20 265 36 300 53" stroke="#211b14" strokeWidth="1" strokeDasharray="3 4" />
+                <path d="M798 20 C735 20 715 36 680 53" stroke="#211b14" strokeWidth="1" strokeDasharray="3 4" />
+                <path d="M166 191 C230 191 256 170 300 151" stroke="#211b14" strokeWidth="1" strokeDasharray="3 4" />
+                <path d="M814 191 C750 191 724 170 680 151" stroke="#211b14" strokeWidth="1" strokeDasharray="3 4" />
+                <path d="M294 53 l8 -2 -5 7" stroke="#211b14" strokeWidth="1" />
+                <path d="M686 53 l-8 -2 5 7" stroke="#211b14" strokeWidth="1" />
+                <path d="M294 151 l8 2 -5 -7" stroke="#211b14" strokeWidth="1" />
+                <path d="M686 151 l-8 2 5 -7" stroke="#211b14" strokeWidth="1" />
+              </svg>
+            </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 sm:gap-6">
-          <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-            <a href="mailto:jimlyasidqi23@gmail.com" className="flex items-center justify-center gap-2.5 bg-white text-black px-6 py-2.5 rounded-full font-medium text-[15px] hover:bg-zinc-200 transition-colors w-full sm:w-auto">
-              Contact me
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-            </a>
+            <div className="hero-name relative z-10 mt-2 border-2 border-[#e79863] px-7 py-5 text-center sm:px-12 sm:py-6">
+              JIMLY
+            </div>
 
-            <a href="/assets/CV%20Jimly%20En.pdf" download target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2.5 border border-zinc-700 text-white px-6 py-2.5 rounded-full font-medium text-[15px] hover:bg-zinc-800 transition-colors w-full sm:w-auto">
-              Download CV
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
-            </a>
+            <div className="absolute left-[2%] top-[142px] hidden h-12 w-12 items-center justify-center rounded-full border-2 border-[#e79863] bg-[#72a8a4] text-[12px] font-black shadow-[2px_2px_0_rgba(23,19,15,0.12)] md:flex">JS</div>
+            <div className="absolute right-[2%] top-[142px] hidden h-12 w-12 items-center justify-center rounded-full border-2 border-[#e79863] bg-[#df9d67] text-[12px] font-black shadow-[2px_2px_0_rgba(23,19,15,0.12)] md:flex">JS</div>
           </div>
 
-          <div className="flex items-center gap-6 text-white w-full sm:w-auto justify-end">
-            <a href="https://www.linkedin.com/in/jimlyassidqihardiansyah/" className="hover:text-zinc-400 transition-colors" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-            </a>
-            {/* <a href="#" className="hover:text-zinc-400 transition-colors" aria-label="X (Twitter)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" /></svg>
-            </a> */}
-          </div>
+          <h1 className="mt-10 max-w-[760px] text-center text-[37px] font-black leading-[0.98] tracking-[-0.055em] sm:text-[48px] md:mt-5 md:text-[62px]">
+            I design software that <span className="md:whitespace-nowrap">gets out of your way.</span> <span className="text-[#44a883]">●</span><span className="text-[#e94d85]">✿</span>
+          </h1>
+
+          <a href="mailto:jimlyasidqi23@gmail.com" className="mt-8 inline-flex items-center gap-2 bg-[#1d1813] px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-[#fff8e6] shadow-[3px_3px_0_#c8bda5] transition-transform hover:-translate-y-0.5">
+            <span className="grid h-4 w-4 place-items-center bg-[#7651c8] text-[9px]">✉</span>
+            Contact me
+          </a>
         </div>
       </main>
 
+      {/* About Section */}
+      <section id="about" className="about-paper relative overflow-hidden border-x border-[#ded4bd] px-5 py-14 text-[#17130f] sm:px-8 md:py-16">
+        <div className="relative mx-auto min-h-[500px] max-w-[1150px]">
+          <p className="about-kicker absolute left-0 top-0 text-[10px] font-bold tracking-[0.08em] sm:left-4 sm:text-[11px]">about me!</p>
+
+          <div className="mx-auto flex max-w-[700px] flex-col items-center pt-10 text-center sm:pt-8">
+            <h2 className="about-title border border-[#17130f] px-3 py-1 text-[17px] font-semibold leading-none sm:text-[20px]">what&apos;s up</h2>
+            <p className="about-copy mt-6 max-w-[530px] text-[15px] font-semibold leading-[1.55] sm:text-[17px]">
+              I&apos;m a fullstack developer who gets a little too excited about making complicated things feel simple. ✨ I care about the small details, the edge cases everyone forgets, and shipping work that genuinely makes someone&apos;s day easier. 🎨
+            </p>
+          </div>
+
+          <div className="about-polaroid about-polaroid-left absolute left-0 top-20 hidden w-[145px] rotate-[-2deg] bg-white p-2 pb-7 shadow-[2px_3px_10px_rgba(38,30,18,0.2)] md:block">
+            <span className="about-tape absolute -left-2 -top-2 h-5 w-9 rotate-[-40deg] bg-[#cbd2f2]/80" />
+            <span className="about-tape absolute -right-2 -top-1 h-5 w-9 rotate-[42deg] bg-[#f7e899]/80" />
+            <img src="/assets/ampucoffee.png" alt="Ampu Coffee project" className="h-[145px] w-full object-cover" />
+            <span className="absolute inset-x-0 bottom-2 text-center font-mono text-[8px] text-zinc-500">work</span>
+          </div>
+
+          <div className="about-polaroid about-polaroid-right absolute right-0 top-10 hidden w-[145px] rotate-[3deg] bg-white p-2 pb-7 shadow-[2px_3px_10px_rgba(38,30,18,0.2)] md:block">
+            <span className="about-tape absolute -left-2 -top-2 h-5 w-9 rotate-[-40deg] bg-[#cbd2f2]/80" />
+            <span className="about-tape absolute -right-2 -top-1 h-5 w-9 rotate-[42deg] bg-[#f7e899]/80" />
+            <img src="/assets/bikinkafe.png" alt="Bikin Kafe project" className="h-[145px] w-full object-cover" />
+            <span className="absolute inset-x-0 bottom-2 text-center font-mono text-[8px] text-zinc-500">a little joy</span>
+          </div>
+
+          <div className="about-skills mx-auto mt-10 grid max-w-[590px] grid-cols-1 justify-items-center gap-2 sm:mt-12 sm:grid-cols-2 sm:gap-x-3 sm:gap-y-2">
+            <div className="flex items-center gap-1">
+              <span className="about-label about-label-yellow">Interaction Design</span>
+              <span className="about-sticker about-sticker-yellow">✦</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="about-label about-label-green">Prototyping</span>
+              <span className="about-sticker about-sticker-green">☕</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="about-label about-label-pink">User Research</span>
+              <span className="about-sticker about-sticker-pink">✿</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="about-label about-label-blue">Motion Design</span>
+              <span className="about-sticker about-sticker-blue">◉</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Showcase Section */}
+      <section id="projects-showcase" className="paper-section project-showcase-section border-x border-[#ececec] bg-white px-5 py-16 text-[#17130f] sm:px-8 md:py-24">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="mb-12 flex flex-col items-center text-center">
+            <p className="project-showcase-kicker">selected work</p>
+            <h2 className="mt-3 text-4xl font-black tracking-[-0.06em] sm:text-6xl">Projects</h2>
+            <p className="mt-4 max-w-[560px] text-sm leading-6 text-zinc-600 sm:text-base">
+              A collection of digital products, experiments, and experiences I&apos;ve designed and built.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {projectsData.map((project, index) => {
+              const cardColor = projectShowcaseColors[index % projectShowcaseColors.length];
+              const projectNumber = String(index + 1).padStart(2, "0");
+
+              return (
+                <a
+                  key={`${project.title}-showcase`}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-showcase-card group"
+                  style={{ backgroundColor: cardColor }}
+                >
+                  <span className="project-showcase-tab">
+                    <span>•</span> PROJECT {projectNumber}
+                  </span>
+
+                  <div className="project-showcase-content">
+                    <p className="project-showcase-meta">• &nbsp;SELECTED WORK</p>
+                    <h3>{project.title}</h3>
+                    <p className="project-showcase-description">{project.description}</p>
+                    <p className="project-showcase-stack">{project.techStack}</p>
+                    <span className="project-showcase-link">VIEW PROJECT <span aria-hidden="true">↗</span></span>
+                  </div>
+
+                  <div className="project-showcase-image-wrap">
+                    <img src={project.image} alt={`${project.title} project preview`} className="project-showcase-image" />
+                    <span className="project-showcase-tape project-showcase-tape-top" aria-hidden="true" />
+                    <span className="project-showcase-tape project-showcase-tape-bottom" aria-hidden="true" />
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="services" className="max-w-[1200px] mx-auto px-8 pb-32">
+      <section id="services" className="paper-section max-w-[1200px] mx-auto px-8 pb-32">
         <div className="flex flex-col items-center mb-12 text-center">
           <h2 className="text-[24px] font-mono md:text-[36px] font-bold text-white mb-2 tracking-tight">
             Services
@@ -252,7 +366,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="max-w-[1200px] mx-auto px-8 pb-32">
+      <section id="projects" className="paper-section max-w-[1200px] mx-auto px-8 pb-32">
         <div className="flex flex-col items-center mb-12 text-center">
           <h2 className="text-[24px] font-mono md:text-[36px] font-bold text-white mb-2 tracking-tight">
             Projects
@@ -303,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section id="testimonials" className="max-w-[1200px] mx-auto overflow-hidden pb-32">
+      <section id="testimonials" className="paper-section max-w-[1200px] mx-auto overflow-hidden pb-32">
         <div className="flex flex-col items-center mb-12 text-center">
           <h2 className="text-[24px] font-mono md:text-[36px] font-bold text-white mb-2 tracking-tight">
             Testimonials
@@ -322,7 +436,7 @@ export default function Home() {
           <div className="flex w-max animate-scroll-left hover:[animation-play-state:paused]">
             <div className="flex gap-6 pr-6">
               {testimonialsRow1.map((t, i) => (
-                <div key={i} className="bg-[#12121A] rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
+                <div key={i} className="testimonial-card rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800">
                       <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
@@ -340,7 +454,7 @@ export default function Home() {
             </div>
             <div className="flex gap-6 pr-6">
               {testimonialsRow1.map((t, i) => (
-                <div key={`copy-${i}`} className="bg-[#12121A] rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
+                <div key={`copy-${i}`} className="testimonial-card rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800">
                       <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
@@ -362,7 +476,7 @@ export default function Home() {
           <div className="flex w-max animate-scroll-right hover:[animation-play-state:paused]">
             <div className="flex gap-6 pr-6">
               {testimonialsRow2.map((t, i) => (
-                <div key={i} className="bg-[#12121A] rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
+                <div key={i} className="testimonial-card rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800">
                       <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
@@ -380,7 +494,7 @@ export default function Home() {
             </div>
             <div className="flex gap-6 pr-6">
               {testimonialsRow2.map((t, i) => (
-                <div key={`copy-${i}`} className="bg-[#12121A] rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
+                <div key={`copy-${i}`} className="testimonial-card rounded-xl p-6 border border-zinc-800 w-[350px] flex-shrink-0 transition-all hover:border-zinc-700">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-zinc-800">
                       <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
@@ -401,7 +515,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="max-w-[1200px] mx-auto px-8 pb-32">
+      <section id="contact" className="paper-section max-w-[1200px] mx-auto px-8 pb-32">
         <div className="flex flex-col items-center mb-12 text-center">
           <h2 className="text-[36px] md:text-[48px] font-bold text-white mb-4 tracking-tight">
             Let&apos;s work together.
@@ -411,11 +525,11 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="w-full max-w-[800px] mx-auto bg-[#0d0d0d] border border-zinc-800/80 rounded-[2rem] p-6 flex flex-col min-h-[300px]">
+        <div className="contact-card w-full max-w-[800px] mx-auto bg-[#0d0d0d] border border-zinc-800/80 rounded-[2rem] p-6 flex flex-col min-h-[300px]">
           {/* Textarea */}
           <textarea
             placeholder="Provide feedback or say something.."
-            className="w-full bg-transparent text-white placeholder-zinc-500 text-[15px] resize-none flex-grow focus:outline-none mb-6"
+            className="contact-textarea w-full bg-transparent text-white placeholder-zinc-500 text-[15px] resize-none flex-grow focus:outline-none mb-6"
           ></textarea>
 
           {/* Bottom Row: Inputs and Button */}
@@ -423,14 +537,14 @@ export default function Home() {
             <input
               type="text"
               placeholder="Full Name"
-              className="w-full bg-[#12121A]/50 border border-zinc-800 rounded-xl px-5 py-4 text-[14px] text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
+              className="contact-input w-full bg-[#12121A]/50 border border-zinc-800 rounded-xl px-5 py-4 text-[14px] text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
             />
             <input
               type="email"
               placeholder="your@email.com"
-              className="w-full bg-[#12121A]/50 border border-zinc-800 rounded-xl px-5 py-4 text-[14px] text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
+              className="contact-input w-full bg-[#12121A]/50 border border-zinc-800 rounded-xl px-5 py-4 text-[14px] text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
             />
-            <button className="w-full bg-[#8e8e8e] hover:bg-[#a0a0a0] text-[#111] text-[14px] font-medium rounded-xl px-8 py-4 transition-colors">
+            <button className="contact-button w-full bg-[#8e8e8e] hover:bg-[#a0a0a0] text-[#111] text-[14px] font-medium rounded-xl px-8 py-4 transition-colors">
               Send
             </button>
           </div>
@@ -438,7 +552,7 @@ export default function Home() {
       </section>
 
       {/* Footer Section */}
-      <footer className="w-full bg-[#0a0a0a] border-t border-zinc-900 pt-20 pb-10 px-8 text-zinc-400">
+      <footer className="paper-footer w-full bg-[#0a0a0a] border-t border-zinc-900 pt-20 pb-10 px-8 text-zinc-400">
         <div className="max-w-[1200px] mx-auto">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
