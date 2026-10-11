@@ -91,6 +91,34 @@ const projectsData = [
     description: "Website andalan untuk layanan topup berbagai jenis game dengan proses otomatis, cepat, dan terpercaya.",
     image: "/assets/topup.webp",
     link: "https://z-store.vercel.app",
+  },
+  {
+    title: "Ampu Coffee",
+    techStack: "Website Kafe",
+    description: "Website kafe Ampu Coffee di Purwokerto yang menampilkan informasi menu, lokasi, dan pengalaman bersantap bagi pengunjung.",
+    image: "/assets/ampucoffee.png",
+    link: "https://ampucoffee.bikinkafe.id",
+  },
+  {
+    title: "Cold N Brew",
+    techStack: "Website Kafe",
+    description: "Website resmi Cold N Brew, jaringan kafe dengan banyak cabang di Indonesia, untuk informasi brand, menu, dan lokasi.",
+    image: "/assets/coldnbrew.png",
+    link: "https://coldnbrew.bikinkafe.id",
+  },
+  {
+    title: "Bikin Kafe",
+    techStack: "Website Agency",
+    description: "Website layanan Bikin Kafe untuk membantu pemilik kafe dan restoran membuat website profesional.",
+    image: "/assets/bikinkafe.png",
+    link: "https://bikinkafe.id",
+  },
+  {
+    title: "Forum Asisten",
+    techStack: "Platform Pendidikan",
+    description: "Website pengumpulan tugas praktikum bagi mahasiswa AMIKOM Purwokerto untuk mengelola dan mengirim tugas secara terpusat.",
+    image: "/assets/forumasisten.png",
+    link: "https://asisten.teraspelajar.com",
   }
 ];
 
@@ -234,7 +262,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projectsData.slice(0, showMoreProjects ? projectsData.length : 4).map((project, index) => (
             <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
               <div className="h-56 w-full bg-zinc-800 relative">
@@ -243,7 +271,7 @@ export default function Home() {
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">{project.title}</h3>
                 <p className="text-[#60A5FA] text-[13px] font-medium mb-4">{project.techStack}</p>
-                <p className="text-zinc-400 text-[14px] leading-[1.6]">
+                <p className="text-zinc-400 text-[14px] leading-[1.6] line-clamp-2">
                   {project.description}
                 </p>
               </div>
