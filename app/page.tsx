@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const baseRow1 = [
@@ -19,6 +19,8 @@ const baseRow2 = [
   { name: "Faizhal Rafi", handle: "@faizhal", text: "Produknya sangat bagus dan sangat memuaskan...", image: "https://placehold.co/100x100/2a2a2a/ffffff?text=FR" },
 ];
 const testimonialsRow2 = [...baseRow2, ...baseRow2];
+
+const changingRoles = ["backend", "AI", "Blockchain", "Frontend"];
 
 const projectsData = [
   {
@@ -139,7 +141,15 @@ const projectShowcaseColors = [
 ];
 
 export default function Home() {
-  const [showMoreProjects, setShowMoreProjects] = useState(false);
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const roleTimer = window.setInterval(() => {
+      setRoleIndex((currentIndex) => (currentIndex + 1) % changingRoles.length);
+    }, 2200);
+
+    return () => window.clearInterval(roleTimer);
+  }, []);
 
   return (
     <div className="theme-light min-h-screen bg-white text-[#17130f] selection:bg-zinc-200 selection:text-zinc-900 font-sans">
@@ -165,7 +175,6 @@ export default function Home() {
           <div className="flex items-center gap-1.5 sm:gap-2">
             <a href="https://www.linkedin.com/in/jimlyassidqihardiansyah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-5 w-5 place-items-center rounded-full bg-[#f2d13a] text-[8px] lowercase transition-transform hover:scale-110">in</a>
             <a href="#projects-showcase" aria-label="Projects" className="grid h-5 w-5 place-items-center rounded-full bg-[#f39b70] text-[10px] transition-transform hover:scale-110">●</a>
-            <a href="#services" aria-label="Services" className="grid h-5 w-5 place-items-center rounded-full bg-[#46b9a1] text-[9px] transition-transform hover:scale-110">✦</a>
             <Link href="mailto:jimlyasidqi23@gmail.com" className="ml-1 flex items-center gap-1 border border-[#272018] bg-[#fffdf4] px-2.5 py-1.5 transition-colors hover:bg-[#272018] hover:text-[#fff8e6] sm:ml-2 sm:px-3">
               <span>♥</span> Contact
             </Link>
@@ -217,8 +226,8 @@ export default function Home() {
       </main>
 
       {/* About Section */}
-      <section id="about" className="about-paper relative overflow-hidden border-x border-[#ded4bd] px-5 py-14 text-[#17130f] sm:px-8 md:py-16">
-        <div className="relative mx-auto min-h-[500px] max-w-[1150px]">
+      <section id="about" className="about-paper relative overflow-hidden border-x border-[#ded4bd] px-5 pb-8 pt-14 text-[#17130f] sm:px-8 md:pb-8 md:pt-16">
+        <div className="relative mx-auto min-h-[400px] max-w-[1150px]">
           <p className="about-kicker absolute left-0 top-0 text-[10px] font-bold tracking-[0.08em] sm:left-4 sm:text-[11px]">about me!</p>
 
           <div className="mx-auto flex max-w-[700px] flex-col items-center pt-10 text-center sm:pt-8">
@@ -228,17 +237,17 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="about-polaroid about-polaroid-left absolute left-0 top-20 hidden w-[145px] rotate-[-2deg] bg-white p-2 pb-7 shadow-[2px_3px_10px_rgba(38,30,18,0.2)] md:block">
+          <div className="about-polaroid about-polaroid-left absolute left-0 top-20 hidden w-[190px] rotate-[-2deg] bg-white p-3 pb-9 shadow-[2px_3px_10px_rgba(38,30,18,0.2)] md:block">
             <span className="about-tape absolute -left-2 -top-2 h-5 w-9 rotate-[-40deg] bg-[#cbd2f2]/80" />
             <span className="about-tape absolute -right-2 -top-1 h-5 w-9 rotate-[42deg] bg-[#f7e899]/80" />
-            <img src="/assets/ampucoffee.png" alt="Ampu Coffee project" className="h-[145px] w-full object-cover" />
+            <img src="/photo/cardkiri.jpeg" alt="Jimly with his team" className="h-[190px] w-full object-cover" />
             <span className="absolute inset-x-0 bottom-2 text-center font-mono text-[8px] text-zinc-500">work</span>
           </div>
 
-          <div className="about-polaroid about-polaroid-right absolute right-0 top-10 hidden w-[145px] rotate-[3deg] bg-white p-2 pb-7 shadow-[2px_3px_10px_rgba(38,30,18,0.2)] md:block">
+          <div className="about-polaroid about-polaroid-right absolute right-0 top-10 hidden w-[190px] rotate-[3deg] bg-white p-3 pb-9 shadow-[2px_3px_10px_rgba(38,30,18,0.2)] md:block">
             <span className="about-tape absolute -left-2 -top-2 h-5 w-9 rotate-[-40deg] bg-[#cbd2f2]/80" />
             <span className="about-tape absolute -right-2 -top-1 h-5 w-9 rotate-[42deg] bg-[#f7e899]/80" />
-            <img src="/assets/bikinkafe.png" alt="Bikin Kafe project" className="h-[145px] w-full object-cover" />
+            <img src="/photo/cardkanan.jpeg" alt="Jimly's memorable moment" className="h-[190px] w-full object-cover" />
             <span className="absolute inset-x-0 bottom-2 text-center font-mono text-[8px] text-zinc-500">a little joy</span>
           </div>
 
@@ -262,6 +271,49 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Profile Section */}
+      <section id="profile" className="paper-section overflow-hidden border-x border-[#ded4bd] px-5 pb-16 pt-8 text-[#17130f] sm:px-8 md:pb-24 md:pt-12">
+        <div className="mx-auto grid max-w-[1150px] items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20">
+          <div className="relative z-10">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#6d6659] sm:text-[11px]">a little more context</p>
+            <h2 className="mt-3 max-w-[680px] text-[42px] font-black leading-[0.94] tracking-[-0.065em] sm:text-[58px] md:text-[72px]">
+              A <span key={changingRoles[roleIndex]} className="role-changing-word relative inline-block min-w-[10.5ch] bg-[#ffd7bf] px-2 pb-1 align-baseline"><span className="absolute -left-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#ef7d4d]" />{changingRoles[roleIndex]}</span> developer in Purwokerto.
+            </h2>
+            <p className="mt-7 max-w-[610px] text-[16px] font-medium leading-[1.65] text-[#5f594f] sm:text-[18px]">
+              I build reliable systems behind thoughtful products - from APIs and databases to the small details that keep a digital experience feeling effortless.
+            </p>
+            <p className="mt-5 max-w-[570px] font-mono text-[12px] leading-[1.75] text-[#777064] sm:text-[13px]">
+              Based in Central Java, I work across fullstack development, internal tools, and public-facing platforms. My favorite work sits where clear logic meets a little bit of joy.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="/assets/CV%20Jimly%20En.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-[#17130f] bg-[#17130f] px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-white shadow-[3px_3px_0_#ef7d4d] transition-transform hover:-translate-y-0.5">
+                More about me <span aria-hidden="true">&rarr;</span>
+              </a>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#8b8375]">available for thoughtful collaborations</span>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-[390px] lg:mr-3">
+            <span className="absolute -left-4 top-16 z-20 grid h-12 w-12 -rotate-12 place-items-center rounded-full border-2 border-[#17130f] bg-[#f6d32f] text-xl shadow-[2px_3px_0_rgba(23,19,15,0.2)]">:)</span>
+            <span className="absolute -right-3 top-7 z-20 grid h-11 w-11 rotate-12 place-items-center rounded-full border-2 border-[#17130f] bg-[#bce6d5] text-lg shadow-[2px_3px_0_rgba(23,19,15,0.2)]">*</span>
+            <span className="absolute -bottom-4 -left-4 z-20 grid h-12 w-12 rotate-6 place-items-center rounded-full border-2 border-[#17130f] bg-[#f7c1d2] text-xl shadow-[2px_3px_0_rgba(23,19,15,0.2)]">&lt;3</span>
+            <div className="relative rotate-[2deg] rounded-xl border border-[#d9d1c0] bg-white p-3 pb-12 shadow-[8px_10px_0_rgba(23,19,15,0.08),0_18px_30px_rgba(23,19,15,0.12)] transition-transform duration-300 hover:rotate-0">
+              <div className="absolute -top-3 left-1/2 z-10 h-7 w-24 -translate-x-1/2 -rotate-3 bg-[#fff0a9]/85 shadow-[0_1px_2px_rgba(23,19,15,0.12)]" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-[#d9e7e1]">
+                <img src="/photo/jimly.jpeg" alt="Portrait of Jimly" className="h-full w-full object-cover object-center saturate-[0.82] contrast-[1.05] transition-transform duration-500 hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/35 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-sm bg-[#fff8e6]/90 px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.12em]">build with care</span>
+              </div>
+              <div className="absolute inset-x-0 bottom-3 flex items-center justify-between px-4 font-mono text-[10px] italic text-[#777064]">
+                <span>Purwokerto, Central Java</span>
+                <span className="font-bold not-italic text-[#17130f]">J/26</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Project Showcase Section */}
       <section id="projects-showcase" className="paper-section project-showcase-section border-x border-[#ececec] bg-white px-5 py-16 text-[#17130f] sm:px-8 md:py-24">
@@ -309,110 +361,6 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="paper-section max-w-[1200px] mx-auto px-8 pb-32">
-        <div className="flex flex-col items-center mb-12 text-center">
-          <h2 className="text-[24px] font-mono md:text-[36px] font-bold text-white mb-2 tracking-tight">
-            Services
-          </h2>
-          <p className="text-zinc-400 text-[15px]">
-            Here are the services I provide to help you build your product.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Service 1 */}
-          <div className="bg-[#12121A] rounded-xl p-8 border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="text-[#60A5FA]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              </div>
-              <h3 className="text-[18px] font-bold text-white">Frontend Development</h3>
-            </div>
-            <p className="text-zinc-400 text-[14px] leading-[1.6] font-mono">
-              Crafting highly interactive, mobile-first web applications and elegant user interfaces leveraging React, JavaScript, HTML, CSS, and other modern technologies.
-            </p>
-          </div>
-
-          {/* Service 2 */}
-          <div className="bg-[#12121A] rounded-xl p-8 border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="text-[#60A5FA]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-              </div>
-              <h3 className="text-[18px] font-bold text-white">Backend Development</h3>
-            </div>
-            <p className="text-zinc-400 text-[14px] leading-[1.6] font-mono">
-              Architecting secure, scalable server-side solutions, managing databases, developing RESTful APIs, and implementing core business logic with Node.js, PHP, or Python.
-            </p>
-          </div>
-
-          {/* Service 3 */}
-          <div className="bg-[#12121A] rounded-xl p-8 border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="text-[#60A5FA]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-              </div>
-              <h3 className="text-[18px] font-bold text-white">DevOps & Deployment</h3>
-            </div>
-            <p className="text-zinc-400 text-[14px] leading-[1.6] font-mono">
-              Automating deployment workflows through CI/CD pipelines, provisioning cloud infrastructure, and utilizing Docker containerization to deliver fast, secure, and reliable releases.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="paper-section max-w-[1200px] mx-auto px-8 pb-32">
-        <div className="flex flex-col items-center mb-12 text-center">
-          <h2 className="text-[24px] font-mono md:text-[36px] font-bold text-white mb-2 tracking-tight">
-            Projects
-          </h2>
-          <p className="text-zinc-400 text-[15px]">
-            A selection of my recent work and projects.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projectsData.slice(0, showMoreProjects ? projectsData.length : 4).map((project, index) => (
-            <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="bg-[#12121A] rounded-xl overflow-hidden border border-zinc-800 transition-all hover:border-zinc-700 flex flex-col cursor-pointer block">
-              <div className="h-56 w-full bg-zinc-800 relative">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-[17px] font-bold text-white mb-2 leading-tight">{project.title}</h3>
-                <p className="text-[#60A5FA] text-[13px] font-medium mb-4">{project.techStack}</p>
-                <p className="text-zinc-400 text-[14px] leading-[1.6] line-clamp-2">
-                  {project.description}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <button
-            onClick={() => setShowMoreProjects(!showMoreProjects)}
-            className="px-8 py-3 rounded-full border border-zinc-700 text-white font-medium text-[15px] hover:bg-zinc-800 transition-colors flex items-center gap-2"
-          >
-            {showMoreProjects ? "Show Less" : "Show More"}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`transition-transform duration-300 ${showMoreProjects ? "rotate-180" : ""}`}
-            >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
         </div>
       </section>
 
